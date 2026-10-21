@@ -2,13 +2,13 @@
 // TODO(content): replace the placeholder speaker data before going live.
 
 export const EVENT = {
-  title: 'Q&A z Główną Księgową IMOSTA: Zamknięcie Roku 2026 i Przygotowanie na Zmiany 2027',
+  title: 'Q&A с главным бухгалтером IMOSTA: закрытие 2026 года и подготовка к изменениям 2027',
   // 29.10.2026 18:00 Europe/Warsaw (CET, UTC+1 — DST ends 25.10.2026)
   startsAt: '2026-10-29T18:00:00+01:00',
   durationMin: 60,
-  dateLabel: '29 października 2026',
-  timeLabel: 'godz. 18:00',
-  weekdayLabel: 'czwartek',
+  dateLabel: '29 октября 2026',
+  timeLabel: '18:00',
+  weekdayLabel: 'четверг',
 };
 
 export const FORM_ANCHOR = 'rejestracja';
@@ -16,46 +16,46 @@ export const REGISTER_ENDPOINT = '/api/register';
 
 // Drop the real file into /public under this name.
 export const LEAD_MAGNET = {
-  title: 'Checklista i Kalendarz Podatkowy 2026/2027',
+  title: 'Чек-лист и налоговый календарь 2026/2027',
   fileName: 'Kalendarz-Zamkniecia-Roku-2026-i-Checklista-KSeF.pdf',
   href: '/Kalendarz-Zamkniecia-Roku-2026-i-Checklista-KSeF.pdf',
 };
 
 export const SPEAKER = {
-  name: 'Główna Księgowa IMOSTA',
+  name: 'Главный бухгалтер IMOSTA',
   role: 'Head of Accounting, IMOSTA Biuro Rachunkowe',
   photo: '', // e.g. '/speaker.jpg' — leave empty to show the placeholder
   experienceYears: 15,
   clients: '200+',
-  bio: 'Na co dzień odpowiada za księgi spółek z o.o., spółek komandytowych i JDG w fazie przekształcenia. Specjalizuje się w zamknięciach roku, CIT estońskim i bezpiecznym planowaniu wypłat dla wspólników. Mówi o podatkach prosto — bez żargonu i bez straszenia.',
+  bio: 'Ежедневно ведёт бухгалтерию Sp. z o.o., коммандитных товариществ (sp.k.) и JDG, которые готовятся к преобразованию в компанию. Специализируется на закрытии года, эстонском CIT (Estoński CIT) и безопасном планировании выплат учредителям. Говорит о налогах просто — без канцелярита и без запугивания.',
   credentials: [
-    'Certyfikat Ministra Finansów uprawniający do usługowego prowadzenia ksiąg rachunkowych',
-    'Praktyka w prawie handlowym (KSH) i rozliczeniach CIT/VAT',
-    'Wdrożenia KSeF i JPK_CIT u klientów biura',
+    'Сертификат Министерства финансов Польши на право оказания бухгалтерских услуг',
+    'Практика в торговом праве (KSH) и расчётах CIT/VAT',
+    'Внедрение KSeF и JPK_CIT у клиентов бюро',
   ],
 };
 
 export const COHOST = {
-  name: 'Ekspert operacyjny OPRIMO BPO',
+  name: 'Операционный эксперт OPRIMO BPO',
   role: 'Business Process Outsourcing',
-  bio: 'Pokaże, jak uporządkować obieg dokumentów, faktur i zatwierdzeń tak, aby KSeF i zamknięcie roku nie blokowały zespołu — od automatyzacji po outsourcing back-office.',
+  bio: 'Покажет, как выстроить документооборот, работу со счетами и согласованиями так, чтобы KSeF и закрытие года не парализовали команду — от автоматизации до аутсорсинга бэк-офиса.',
 };
 
 export const FAQ = [
   {
-    q: 'Czy webinar jest bezpłatny?',
-    a: 'Tak. Pełny dostęp do transmisji, sesji Q&A, nagrania i checklisty PDF jest w 100% darmowy. Nie prosimy o dane karty i nie ma żadnych ukrytych opłat.',
+    q: 'Вебинар бесплатный?',
+    a: 'Да. Полный доступ к трансляции, сессии Q&A, записи и чек-листу PDF — на 100% бесплатный. Мы не запрашиваем данные карты, скрытых платежей нет.',
   },
   {
-    q: 'Czy będzie nagranie?',
-    a: 'Tak. Po wydarzeniu wyślemy wszystkim zarejestrowanym uczestnikom nagranie wideo oraz checklistę PDF — także jeśli nie dasz rady dołączyć na żywo.',
+    q: 'Будет ли запись?',
+    a: 'Да. После мероприятия мы отправим всем зарегистрированным участникам видеозапись и чек-лист PDF — даже если вы не сможете подключиться в прямом эфире.',
   },
   {
-    q: 'Jak mogę zadać pytanie?',
-    a: 'Wpisz pytanie w formularzu rejestracyjnym — Główna Księgowa przygotuje się do odpowiedzi z wyprzedzeniem. Możesz też zadać je na czacie podczas transmisji na żywo.',
+    q: 'Как задать вопрос?',
+    a: 'Напишите вопрос в регистрационной форме — главный бухгалтер подготовит ответ заранее. Также можно задать его в чате во время прямой трансляции.',
   },
   {
-    q: 'Dla kogo jest to wydarzenie?',
-    a: 'Dla właścicieli i zarządów spółek z o.o., dyrektorów finansowych i osób prowadzących JDG, które planują przekształcenie w spółkę. Wiedza specjalistyczna nie jest wymagana.',
+    q: 'Для кого это мероприятие?',
+    a: 'Для владельцев и членов правления Sp. z o.o., финансовых директоров и предпринимателей на JDG, которые планируют преобразование в компанию. Специальные знания не требуются.',
   },
 ];

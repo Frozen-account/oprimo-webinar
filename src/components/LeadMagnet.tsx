@@ -5,26 +5,26 @@ import { CtaButton } from './ui';
 const FEATURES = [
   {
     icon: CalendarRange,
-    title: 'Kalendarz terminów 2026/2027',
-    text: 'Wszystkie daty: zamknięcie roku, CIT-8, sprawozdanie, KSeF i JPK_CIT — miesiąc po miesiącu.',
+    title: 'Календарь сроков 2026/2027',
+    text: 'Все даты: закрытие года, CIT-8, финансовая отчётность, KSeF и JPK_CIT — месяц за месяцем.',
   },
   {
     icon: ListChecks,
-    title: 'Checklista zamknięcia roku krok po kroku',
-    text: 'Lista punktów do odhaczenia z Twoim księgowym — od inwentaryzacji po uchwały wspólników.',
+    title: 'Пошаговый чек-лист закрытия года',
+    text: 'Пункты, которые нужно пройти с вашим бухгалтером — от инвентаризации до решений учредителей.',
   },
   {
     icon: ShieldAlert,
-    title: 'Mapa ryzyk przy wypłatach ze spółki',
-    text: 'Porównanie dywidendy, art. 176 KSH, B2B i estońskiego CIT z czerwonymi flagami dla urzędu.',
+    title: 'Карта рисков при выплатах из компании',
+    text: 'Сравнение дивидендов, art. 176 KSH, B2B и Estoński CIT с «красными флагами» для Skarbówka.',
   },
 ];
 
 const PREVIEW_ROWS = [
-  { done: true, text: 'Spis z natury i inwentaryzacja' },
-  { done: true, text: 'Weryfikacja kosztów KUP 2026' },
-  { done: false, text: 'Uprawnienia KSeF dla zespołu' },
-  { done: false, text: 'Struktura JPK_CIT — test danych' },
+  { done: true, text: 'Инвентаризация (spis z natury)' },
+  { done: true, text: 'Проверка расходов KUP 2026' },
+  { done: false, text: 'Доступы KSeF для команды' },
+  { done: false, text: 'Структура JPK_CIT — проверка данных' },
 ];
 
 export function LeadMagnet() {
@@ -72,21 +72,21 @@ export function LeadMagnet() {
                 ))}
               </div>
               <p className="mt-2 flex items-center gap-1.5 text-[10px] font-semibold text-brand-amber">
-                <span className="size-2 rounded-sm bg-brand-amber" /> 31.12 — ostatni dzień na koszty KUP
+                <span className="size-2 rounded-sm bg-brand-amber" /> 31.12 — последний день для расходов KUP
               </p>
             </div>
           </div>
 
           <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-bold text-emerald-300 ring-1 ring-white/15 backdrop-blur">
-              <FileDown className="size-3.5" aria-hidden /> Do pobrania od razu po rejestracji
+              <FileDown className="size-3.5" aria-hidden /> Доступен сразу после регистрации
             </span>
             <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-balance text-white sm:text-4xl">
               {LEAD_MAGNET.title}
             </h2>
             <p className="mt-4 text-lg text-slate-300">
-              Praktyczne narzędzie, które przygotowała Główna Księgowa IMOSTA dla swoich klientów — teraz dostępne dla
-              uczestników webinaru.
+              Практический инструмент, который главный бухгалтер IMOSTA подготовила для своих клиентов, — теперь доступен
+              участникам вебинара.
             </p>
 
             <ul className="mt-8 space-y-5">
@@ -104,7 +104,7 @@ export function LeadMagnet() {
             </ul>
 
             <CtaButton className="mt-10 bg-brand-emerald-2 text-slate-950 hover:bg-emerald-400">
-              Odbierz checklistę za darmo
+              Получить чек-лист бесплатно
             </CtaButton>
           </div>
         </div>

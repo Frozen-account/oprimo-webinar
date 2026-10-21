@@ -9,36 +9,35 @@ export function Footer() {
           <div className="max-w-md">
             <Logos inverted />
             <p className="mt-4 text-sm leading-relaxed">
-              Webinar organizowany wspólnie przez OPRIMO BPO Sp. z o.o. (outsourcing procesów biznesowych) oraz IMOSTA
-              (biuro rachunkowe i doradztwo podatkowe).
+              Вебинар организован совместно OPRIMO BPO Sp. z o.o. (аутсорсинг бизнес-процессов) и IMOSTA (бухгалтерское
+              бюро и налоговое консультирование).
             </p>
           </div>
-          <nav aria-label="Informacje prawne" className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          <nav aria-label="Правовая информация" className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
             <a href="/polityka-prywatnosci" className="transition hover:text-white">
-              Polityka Prywatności
+              Политика конфиденциальности
             </a>
             <a href="/rodo" className="transition hover:text-white">
-              Klauzula informacyjna RODO
+              Информация об обработке данных (RODO)
             </a>
             <a href="/regulamin-webinaru" className="transition hover:text-white">
-              Regulamin webinaru
+              Правила вебинара
             </a>
           </nav>
         </div>
 
         <div className="mt-10 space-y-3 border-t border-white/10 pt-8 text-xs leading-relaxed text-slate-500">
           <p>
-            Administratorami danych osobowych podanych w formularzu są OPRIMO BPO Sp. z o.o. oraz IMOSTA. Dane przetwarzamy
-            w celu rejestracji na wydarzenie, przesłania materiałów i nagrania (art. 6 ust. 1 lit. a i b RODO). Przysługuje Ci
-            prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania oraz wycofania zgody w dowolnym
-            momencie.
+            Администраторами персональных данных, указанных в форме, являются OPRIMO BPO Sp. z o.o. и IMOSTA. Мы обрабатываем
+            данные для регистрации на мероприятие, отправки материалов и записи (ст. 6 п. 1 лит. a и b RODO/GDPR). Вы вправе
+            получить доступ к своим данным, исправить или удалить их, ограничить обработку, а также в любой момент отозвать
+            согласие.
           </p>
           <p>
-            Treści prezentowane podczas webinaru oraz w materiałach PDF mają charakter informacyjny i edukacyjny i nie
-            stanowią porady podatkowej ani prawnej w rozumieniu przepisów. Decyzje podatkowe należy konsultować
-            indywidualnie.
+            Материалы вебинара и PDF носят информационный и образовательный характер и не являются налоговой или
+            юридической консультацией. Налоговые решения следует согласовывать индивидуально.
           </p>
-          <p className="pt-2 text-slate-400">© {year} OPRIMO BPO Sp. z o.o. &amp; IMOSTA. Wszelkie prawa zastrzeżone.</p>
+          <p className="pt-2 text-slate-400">© {year} OPRIMO BPO Sp. z o.o. &amp; IMOSTA. Все права защищены.</p>
         </div>
       </div>
     </footer>

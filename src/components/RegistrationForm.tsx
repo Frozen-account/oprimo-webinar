@@ -40,21 +40,21 @@ function isValidNip(nip: string) {
 
 function validate(v: Values): Errors {
   const e: Errors = {};
-  if (v.firstName.trim().length < 2) e.firstName = 'Podaj imię.';
-  if (v.lastName.trim().length < 2) e.lastName = 'Podaj nazwisko.';
-  if (!v.email.trim()) e.email = 'Podaj adres e-mail — wyślemy na niego link do transmisji.';
-  else if (!EMAIL_RE.test(v.email.trim())) e.email = 'Ten adres e-mail wygląda na niepoprawny.';
+  if (v.firstName.trim().length < 2) e.firstName = 'Укажите имя.';
+  if (v.lastName.trim().length < 2) e.lastName = 'Укажите фамилию.';
+  if (!v.email.trim()) e.email = 'Укажите e-mail — на него мы отправим ссылку на трансляцию.';
+  else if (!EMAIL_RE.test(v.email.trim())) e.email = 'Похоже, адрес e-mail указан с ошибкой.';
 
   // Optional field: only validate when the input looks like a bare NIP (digits, dashes, spaces, PL prefix).
   const company = v.company.trim();
   if (company && /^(PL)?[\d\s-]+$/i.test(company)) {
     const digits = company.replace(/\D/g, '');
-    if (!isValidNip(digits)) e.company = 'Numer NIP jest niepoprawny — sprawdź cyfry lub wpisz nazwę firmy.';
+    if (!isValidNip(digits)) e.company = 'Некорректный номер NIP — проверьте цифры или укажите название компании.';
   }
 
-  if (!v.businessForm) e.businessForm = 'Wybierz formę działalności.';
-  if (v.question.trim().length < 5) e.question = 'Napisz krótko, o co chcesz zapytać — odpowiemy na żywo.';
-  if (!v.consent) e.consent = 'Zgoda jest wymagana, abyśmy mogli wysłać link i materiały.';
+  if (!v.businessForm) e.businessForm = 'Выберите форму деятельности.';
+  if (v.question.trim().length < 5) e.question = 'Кратко опишите свой вопрос — ответим в прямом эфире.';
+  if (!v.consent) e.consent = 'Согласие обязательно, чтобы мы могли отправить ссылку и материалы.';
   return e;
 }
 
@@ -119,8 +119,8 @@ export function RegistrationForm({ onSuccess }: { onSuccess: () => void }) {
 
       <div className="mb-5 flex items-start justify-between gap-3">
         <div>
-          <h2 className="text-xl font-extrabold tracking-tight text-brand-navy">Zarezerwuj miejsce</h2>
-          <p className="mt-1 text-sm text-slate-500">Rejestracja zajmuje ok. 40 sekund.</p>
+          <h2 className="text-xl font-extrabold tracking-tight text-brand-navy">Забронируйте место</h2>
+          <p className="mt-1 text-sm text-slate-500">Регистрация займёт около 40 секунд.</p>
         </div>
         <span className="shrink-0 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-bold text-brand-emerald ring-1 ring-emerald-100">
           0 zł
@@ -129,7 +129,7 @@ export function RegistrationForm({ onSuccess }: { onSuccess: () => void }) {
 
       <form noValidate onSubmit={submit} className="space-y-4">
         <div className="grid gap-4 sm:grid-cols-2">
-          <Field label="Imię" error={errors.firstName}>
+          <Field label="Имя" error={errors.firstName}>
             {(p) => (
               <input
                 {...p}
@@ -142,7 +142,7 @@ export function RegistrationForm({ onSuccess }: { onSuccess: () => void }) {
               />
             )}
           </Field>
-          <Field label="Nazwisko" error={errors.lastName}>
+          <Field label="Фамилия" error={errors.lastName}>
             {(p) => (
               <input
                 {...p}
@@ -157,7 +157,7 @@ export function RegistrationForm({ onSuccess }: { onSuccess: () => void }) {
           </Field>
         </div>
 
-        <Field label="Służbowy e-mail" error={errors.email}>
+        <Field label="Рабочий e-mail" error={errors.email}>
           {(p) => (
             <input
               {...p}
@@ -165,7 +165,7 @@ export function RegistrationForm({ onSuccess }: { onSuccess: () => void }) {
               type="email"
               inputMode="email"
               autoComplete="email"
-              placeholder="jan.kowalski@firma.pl"
+              placeholder="ivan.petrov@firma.pl"
               value={values.email}
               onChange={(e) => set('email', e.target.value)}
               onBlur={() => blur('email')}
@@ -175,7 +175,7 @@ export function RegistrationForm({ onSuccess }: { onSuccess: () => void }) {
         </Field>
 
         <div className="grid gap-4 sm:grid-cols-2">
-          <Field label="Nazwa firmy / NIP" optional error={errors.company}>
+          <Field label="Название компании / NIP" optional error={errors.company}>
             {(p) => (
               <input
                 {...p}
@@ -188,7 +188,7 @@ export function RegistrationForm({ onSuccess }: { onSuccess: () => void }) {
               />
             )}
           </Field>
-          <Field label="Forma działalności" error={errors.businessForm}>
+          <Field label="Форма деятельности" error={errors.businessForm}>
             {(p) => (
               <select
                 {...p}
@@ -199,18 +199,18 @@ export function RegistrationForm({ onSuccess }: { onSuccess: () => void }) {
                 className={cn(inputCls(!!errors.businessForm), !values.businessForm && 'text-slate-400')}
               >
                 <option value="" disabled>
-                  Wybierz…
+                  Выберите…
                 </option>
                 <option value="spzoo">Sp. z o.o.</option>
                 <option value="jdg">JDG</option>
-                <option value="inna">Inna</option>
+                <option value="inna">Другая</option>
               </select>
             )}
           </Field>
         </div>
 
         <Field
-          label="Jakie jest Twoje najważniejsze pytanie podatkowe lub księgowe na ten moment?"
+          label="Какой налоговый или бухгалтерский вопрос для вас сейчас самый важный?"
           error={errors.question}
           hint={`${values.question.length}/${QUESTION_MAX}`}
         >
@@ -220,7 +220,7 @@ export function RegistrationForm({ onSuccess }: { onSuccess: () => void }) {
               name="question"
               rows={3}
               maxLength={QUESTION_MAX}
-              placeholder="np. Jak bezpiecznie rozliczyć dywidendę, przygotowanie do KSeF..."
+              placeholder="напр. Как безопасно выплатить дивиденды, подготовка к KSeF..."
               value={values.question}
               onChange={(e) => set('question', e.target.value)}
               onBlur={() => blur('question')}
@@ -248,12 +248,12 @@ export function RegistrationForm({ onSuccess }: { onSuccess: () => void }) {
               )}
             />
             <span>
-              Wyrażam zgodę na przetwarzanie moich danych osobowych przez OPRIMO BPO Sp. z o.o. oraz IMOSTA w celu
-              rejestracji na webinar, przesłania materiałów i nagrania, zgodnie z{' '}
+              Я даю согласие на обработку моих персональных данных компаниями OPRIMO BPO Sp. z o.o. и IMOSTA в целях
+              регистрации на вебинар, отправки материалов и записи в соответствии с{' '}
               <a href="/polityka-prywatnosci" className="font-semibold text-brand-blue underline-offset-2 hover:underline">
-                Polityką Prywatności
+                Политикой конфиденциальности
               </a>{' '}
-              (RODO). Zgodę mogę wycofać w każdej chwili.
+              (RODO/GDPR). Я могу отозвать согласие в любой момент.
             </span>
           </label>
           {errors.consent && <ErrorText id="consent-error">{errors.consent}</ErrorText>}
@@ -262,7 +262,7 @@ export function RegistrationForm({ onSuccess }: { onSuccess: () => void }) {
         {status === 'error' && (
           <div role="alert" className="flex items-start gap-2 rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-700">
             <TriangleAlert className="mt-0.5 size-4 shrink-0" aria-hidden />
-            Nie udało się wysłać zgłoszenia. Sprawdź połączenie i spróbuj ponownie.
+            Не удалось отправить заявку. Проверьте подключение и попробуйте ещё раз.
           </div>
         )}
 
@@ -273,18 +273,18 @@ export function RegistrationForm({ onSuccess }: { onSuccess: () => void }) {
         >
           {status === 'submitting' ? (
             <>
-              <LoaderCircle className="size-5 animate-spin" aria-hidden /> Rezerwujemy miejsce…
+              <LoaderCircle className="size-5 animate-spin" aria-hidden /> Бронируем место…
             </>
           ) : (
             <>
-              Zarezerwuj darmowe miejsce i odbierz checklistę
+              Забронировать бесплатное место и получить чек-лист
               <ArrowRight className="size-5 shrink-0 transition-transform group-hover:translate-x-0.5" aria-hidden />
             </>
           )}
         </button>
 
         <p className="flex items-center justify-center gap-1.5 text-xs text-slate-400">
-          <Lock className="size-3" aria-hidden /> Bez spamu. Twoje dane są bezpieczne.
+          <Lock className="size-3" aria-hidden /> Без спама. Ваши данные в безопасности.
         </p>
       </form>
     </div>
@@ -327,7 +327,7 @@ function Field({
       <div className="mb-1.5 flex items-end justify-between gap-2">
         <label htmlFor={id} className="text-sm font-semibold text-slate-700">
           {label}
-          {optional && <span className="ml-1 font-normal text-slate-400">(opcjonalnie)</span>}
+          {optional && <span className="ml-1 font-normal text-slate-400">(необязательно)</span>}
         </label>
         {hint && <span className="shrink-0 text-xs text-slate-400 tabular-nums">{hint}</span>}
       </div>

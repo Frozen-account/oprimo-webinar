@@ -21,18 +21,18 @@ export function Header() {
       )}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-[4.5rem] sm:px-6 lg:px-8">
-        <a href="#top" aria-label="OPRIMO BPO × IMOSTA — początek strony">
+        <a href="#top" aria-label="OPRIMO BPO × IMOSTA — в начало страницы">
           <Logos />
         </a>
 
         <div className="flex items-center gap-3">
           <span className="hidden items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1.5 text-xs font-semibold text-slate-600 backdrop-blur lg:inline-flex">
             <MonitorPlay className="size-3.5 text-brand-blue" aria-hidden />
-            Bezpłatny Webinar na Żywo <span className="text-slate-300">|</span> Online
+            Бесплатный вебинар в прямом эфире <span className="text-slate-300">|</span> Онлайн
           </span>
           <CtaButton size="sm">
-            <span className="sm:hidden">Zapisz się</span>
-            <span className="hidden sm:inline">Zapisz się bezpłatnie</span>
+            <span className="sm:hidden">Записаться</span>
+            <span className="hidden sm:inline">Записаться бесплатно</span>
           </CtaButton>
         </div>
       </div>

@@ -11,19 +11,19 @@ export function FinalCta() {
         <div className="relative">
           <span className="inline-flex items-center gap-2 rounded-full bg-amber-500/15 px-3 py-1.5 text-xs font-bold text-amber-300 ring-1 ring-amber-400/30 sm:text-sm">
             <Users className="size-4" aria-hidden />
-            Liczba miejsc na sesji Q&amp;A ograniczona pojemnością pokoju webinarowego
+            Количество мест на сессии Q&amp;A ограничено вместимостью вебинарной комнаты
           </span>
           <h2 className="mx-auto mt-6 max-w-2xl text-3xl font-extrabold tracking-tight text-balance text-white sm:text-4xl">
-            Zamknij rok 2026 spokojnie. Wejdź w 2027 przygotowany.
+            Закройте 2026 год спокойно. Войдите в 2027 подготовленными.
           </h2>
           <p className="mx-auto mt-4 flex max-w-xl flex-wrap items-center justify-center gap-x-2 text-slate-300">
             <CalendarDays className="size-4 text-emerald-400" aria-hidden />
-            {EVENT.weekdayLabel}, {EVENT.dateLabel}, {EVENT.timeLabel} · online · 0 zł
+            {EVENT.weekdayLabel}, {EVENT.dateLabel}, {EVENT.timeLabel} · онлайн · 0 zł
           </p>
           <CtaButton size="lg" className="mt-8">
-            Zapisz się bezpłatnie
+            Записаться бесплатно
           </CtaButton>
-          <p className="mt-4 text-xs text-slate-400">Nagranie i checklista PDF dla wszystkich zarejestrowanych.</p>
+          <p className="mt-4 text-xs text-slate-400">Запись и чек-лист PDF для всех зарегистрированных.</p>
         </div>
       </div>
     </section>

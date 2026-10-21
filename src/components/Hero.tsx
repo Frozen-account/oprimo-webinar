@@ -18,15 +18,15 @@ export function Hero({ onRegistered }: { onRegistered: () => void }) {
           <LivePill />
 
           <h1 className="mt-6 text-4xl leading-[1.08] font-extrabold tracking-tight text-balance text-brand-navy sm:text-5xl lg:text-[3.5rem]">
-            Prosto o podatkach: Zamknięcie roku 2026 i{' '}
+            Просто о налогах: закрытие 2026 года и{' '}
             <span className="bg-gradient-to-r from-brand-emerald to-brand-blue bg-clip-text text-transparent">
-              bezpieczne wejście w 2027
+              безопасный вход в 2027
             </span>
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg text-pretty text-slate-600 sm:text-xl">
-            Otwarte spotkanie z Główną Księgową IMOSTA. Odpowiedzi na Twoje pytania na żywo: od KSeF i JPK_CIT, po legalne
-            wypłaty zysków ze spółki z o.o. i uniknięcie kar skarbowych.
+            Открытая встреча с главным бухгалтером IMOSTA. Ответы на ваши вопросы в прямом эфире: от KSeF и JPK_CIT до
+            законных выплат прибыли из Sp. z o.o. и того, как избежать налоговых штрафов.
           </p>
 
           <div className="mt-8 flex max-w-2xl items-start gap-4 rounded-2xl border border-amber-200 bg-amber-50/80 p-4 backdrop-blur sm:p-5">
@@ -34,8 +34,8 @@ export function Hero({ onRegistered }: { onRegistered: () => void }) {
               <Gift className="size-5" aria-hidden />
             </span>
             <p className="text-sm text-amber-950 sm:text-base">
-              <strong className="font-bold">🎁 Bonus dla zarejestrowanych:</strong> Interaktywna checklista zamknięcia roku 2026
-              z harmonogramem KSeF — do pobrania od razu po zapisie.
+              <strong className="font-bold">🎁 Бонус для зарегистрированных:</strong> интерактивный чек-лист закрытия 2026
+              года с графиком внедрения KSeF — доступен сразу после регистрации.
             </p>
           </div>
 
@@ -43,9 +43,9 @@ export function Hero({ onRegistered }: { onRegistered: () => void }) {
 
           <ul className="mt-8 grid max-w-2xl gap-3 text-sm text-slate-600 sm:grid-cols-3">
             {[
-              { icon: Clock, text: '60 minut konkretów' },
-              { icon: MessagesSquare, text: 'Q&A na żywo' },
-              { icon: PlayCircle, text: 'Nagranie dla zapisanych' },
+              { icon: Clock, text: '60 минут по делу' },
+              { icon: MessagesSquare, text: 'Q&A в прямом эфире' },
+              { icon: PlayCircle, text: 'Запись для участников' },
             ].map(({ icon: Icon, text }) => (
               <li key={text} className="flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white/70 px-3 py-2.5 backdrop-blur">
                 <Icon className="size-4 shrink-0 text-brand-emerald" aria-hidden />
@@ -71,11 +71,11 @@ function LivePill() {
           <span className="absolute inline-flex size-full animate-ping rounded-full bg-red-500 opacity-75" />
           <span className="relative inline-flex size-2 rounded-full bg-red-600" />
         </span>
-        Transmisja na żywo
+        Прямая трансляция
       </span>
       <span className="inline-flex items-center gap-1.5">
         <CalendarDays className="size-3.5 text-slate-400" aria-hidden />
-        {EVENT.dateLabel}, {EVENT.timeLabel} ({EVENT.durationMin} min)
+        {EVENT.dateLabel}, {EVENT.timeLabel} ({EVENT.durationMin} мин)
       </span>
     </div>
   );
@@ -88,20 +88,20 @@ function Countdown() {
   if (c.isLive) {
     return (
       <p className="mt-6 inline-flex items-center gap-2 rounded-xl bg-red-600 px-4 py-2 text-sm font-semibold text-white">
-        <span className="size-2 animate-pulse rounded-full bg-white" /> Jesteśmy na żywo — zapisz się, aby otrzymać link
+        <span className="size-2 animate-pulse rounded-full bg-white" /> Мы в эфире — зарегистрируйтесь, чтобы получить ссылку
       </p>
     );
   }
 
   const units = [
-    { v: c.days, l: 'dni' },
-    { v: c.hours, l: 'godz.' },
-    { v: c.minutes, l: 'min' },
-    { v: c.seconds, l: 'sek' },
+    { v: c.days, l: 'дн.' },
+    { v: c.hours, l: 'ч' },
+    { v: c.minutes, l: 'мин' },
+    { v: c.seconds, l: 'сек' },
   ];
   return (
-    <div className="mt-6 flex flex-wrap items-center gap-3" aria-label="Czas do rozpoczęcia webinaru">
-      <span className="text-xs font-semibold tracking-wider text-slate-500 uppercase">Start za</span>
+    <div className="mt-6 flex flex-wrap items-center gap-3" aria-label="Время до начала вебинара">
+      <span className="text-xs font-semibold tracking-wider text-slate-500 uppercase">Старт через</span>
       <div className="flex gap-2" role="timer" aria-live="off">
         {units.map((u) => (
           <div key={u.l} className="min-w-14 rounded-xl bg-brand-navy px-2.5 py-2 text-center text-white shadow-sm">

@@ -10,7 +10,7 @@ export function Faq() {
   return (
     <section id="faq" className="py-20 sm:py-24">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading eyebrow="FAQ" title="Najczęstsze pytania" />
+        <SectionHeading eyebrow="FAQ" title="Частые вопросы" />
 
         <div className="mt-12 divide-y divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
           {FAQ.map((item, i) => {

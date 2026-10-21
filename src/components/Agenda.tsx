@@ -13,41 +13,41 @@ interface Pillar {
 const PILLARS: Pillar[] = [
   {
     icon: CalendarCheck,
-    tag: 'Termin: 31.12.2026',
+    tag: 'Срок: 31.12.2026',
     tagTone: 'amber',
-    title: 'Zamknięcie Finansowe 2026',
-    lead: 'Co zrobić przed końcem grudnia, żeby bilans nie zaskoczył Cię w marcu.',
+    title: 'Финансовое закрытие 2026',
+    lead: 'Что сделать до конца декабря, чтобы баланс не преподнёс сюрпризов в марте.',
     points: [
-      'Inwentaryzacja — kiedy, jak i kto podpisuje',
-      'Optymalizacja kosztów KUP do 31 grudnia',
-      'Odpisy aktualizujące i amortyzacja',
-      'Zaległe i korygujące faktury — jak je domknąć',
+      'Инвентаризация — когда, как и кто подписывает',
+      'Оптимизация расходов KUP до 31 декабря',
+      'Списания, переоценка и амортизация',
+      'Просроченные и корректирующие счета — как их закрыть',
     ],
   },
   {
     icon: FileCode2,
-    tag: 'Zmiany 2026/2027',
+    tag: 'Изменения 2026/2027',
     tagTone: 'blue',
-    title: 'KSeF i JPK_CIT bez paniki',
-    lead: 'Konkretny harmonogram zamiast chaosu z komunikatów i plotek.',
+    title: 'KSeF и JPK_CIT без паники',
+    lead: 'Чёткий график вместо хаоса из сообщений и слухов.',
     points: [
-      'Aktualne terminy obowiązkowego KSeF 2026/2027',
-      'Moratorium na sankcje — co faktycznie oznacza',
-      'JPK_CIT: kogo i od kiedy obejmuje',
-      'Co wdrożyć w firmie już teraz',
+      'Актуальные сроки обязательного KSeF на 2026/2027',
+      'Мораторий на санкции — что он означает на практике',
+      'JPK_CIT: кого касается и с какого момента',
+      'Что внедрить в компании уже сейчас',
     ],
   },
   {
     icon: Wallet,
     tag: 'Sp. z o.o.',
     tagTone: 'emerald',
-    title: 'Portfel Właściciela (Sp. z o.o.)',
-    lead: 'Jak legalnie wypłacać pieniądze ze spółki i nie prowokować kontroli.',
+    title: 'Кошелёк владельца (Sp. z o.o.)',
+    lead: 'Как законно выводить деньги из компании и не провоцировать проверку.',
     points: [
       'Art. 176 KSH vs. B2B vs. Estoński CIT',
-      'Dywidenda, zaliczka, pożyczka — porównanie',
-      "Gdzie Skarbówka szuka 'ukrytych zysków'",
-      'Najczęstsze błędy wspólników',
+      'Дивиденды, аванс, заём — сравнение',
+      "Где Skarbówka ищет «скрытую прибыль»",
+      'Самые частые ошибки учредителей',
     ],
   },
 ];
@@ -63,9 +63,9 @@ export function Agenda() {
     <section id="agenda" className="border-t border-slate-200/70 bg-white py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Agenda · 3 filary"
-          title="Trzy tematy, które w tym roku kosztują firmy najwięcej"
-          lead="Krótki konkret od praktyka, a potem odpowiedzi na Twoje pytania. Bez teorii — tylko to, co trzeba zrobić i do kiedy."
+          eyebrow="Программа · 3 блока"
+          title="Три темы, которые в этом году обходятся компаниям дороже всего"
+          lead="Коротко и по делу от практика, а затем — ответы на ваши вопросы. Без теории: только что нужно сделать и в какие сроки."
         />
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
@@ -80,7 +80,7 @@ export function Agenda() {
                 </span>
                 <span className={`rounded-full px-2.5 py-1 text-xs font-bold ring-1 ${TAG_TONES[p.tagTone]}`}>{p.tag}</span>
               </div>
-              <p className="mt-6 text-xs font-bold tracking-wider text-slate-400 uppercase">Część {i + 1}</p>
+              <p className="mt-6 text-xs font-bold tracking-wider text-slate-400 uppercase">Часть {i + 1}</p>
               <h3 className="mt-1 text-xl font-extrabold tracking-tight text-brand-navy">{p.title}</h3>
               <p className="mt-2 text-sm text-slate-600">{p.lead}</p>
               <ul className="mt-5 space-y-2.5 border-t border-slate-100 pt-5">
@@ -96,7 +96,7 @@ export function Agenda() {
         </div>
 
         <div className="mt-12 text-center">
-          <CtaButton>Chcę wziąć udział — bezpłatnie</CtaButton>
+          <CtaButton>Хочу участвовать — бесплатно</CtaButton>
         </div>
       </div>
     </section>
