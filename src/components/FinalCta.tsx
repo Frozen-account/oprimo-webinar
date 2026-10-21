@@ -18,8 +18,9 @@ export function FinalCta() {
           </h2>
           <p className="mx-auto mt-4 flex max-w-xl flex-wrap items-center justify-center gap-x-2 text-slate-300">
             <CalendarDays className="size-4 text-emerald-400" aria-hidden />
-            {EVENT.weekdayLabel}, {EVENT.dateLabel}, {EVENT.timeLabel} · онлайн · 0 zł
+            {EVENT.weekdayLabel}, {EVENT.dateLabel}, {EVENT.timeLabel} {EVENT.tzLabel} · онлайн · 0 zł
           </p>
+          <p className="mx-auto mt-2 max-w-xl text-sm text-slate-400">{EVENT.formatLabel}</p>
           <CtaButton size="lg" className="mt-8">
             Записаться бесплатно
           </CtaButton>

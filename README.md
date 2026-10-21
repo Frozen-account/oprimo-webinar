@@ -1,6 +1,6 @@
 # OPRIMO BPO × IMOSTA — webinar „Zamknięcie Roku 2026”
 
-Landing page rejestracji na bezpłatny webinar Q&A (29.10.2026, 18:00). Vite + React + TypeScript + Tailwind CSS v4 + Lucide.
+Landing page rejestracji na bezpłatny webinar Q&A (15.11.2026, 18:00 CET; 20 min ekspert + 40 min Q&A). Vite + React + TypeScript + Tailwind CSS v4 + Lucide.
 
 ```bash
 npm install

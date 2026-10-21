@@ -61,7 +61,7 @@ export function calendarHref() {
     `DTSTART:${icsDate(start)}`,
     `DTEND:${icsDate(end)}`,
     'SUMMARY:Вебинар Q&A: закрытие 2026 года (OPRIMO BPO × IMOSTA)',
-    'DESCRIPTION:Ссылка на трансляцию — в письме с подтверждением регистрации.',
+    'DESCRIPTION:20 минут выжимка от эксперта + 40 минут Q&A. Ссылка на трансляцию — в письме с подтверждением регистрации.',
     'LOCATION:Онлайн',
     'BEGIN:VALARM',
     'TRIGGER:-PT30M',

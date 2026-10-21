@@ -1,4 +1,5 @@
 import { CalendarCheck, Check, FileCode2, Wallet, type LucideIcon } from 'lucide-react';
+import { EVENT } from '../content';
 import { CtaButton, SectionHeading } from './ui';
 
 interface Pillar {
@@ -65,7 +66,7 @@ export function Agenda() {
         <SectionHeading
           eyebrow="Программа · 3 блока"
           title="Три темы, которые в этом году обходятся компаниям дороже всего"
-          lead="Коротко и по делу от практика, а затем — ответы на ваши вопросы. Без теории: только что нужно сделать и в какие сроки."
+          lead={`Формат: ${EVENT.formatLabel}. Без теории — только что нужно сделать и в какие сроки.`}
         />
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">

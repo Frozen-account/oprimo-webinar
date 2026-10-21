@@ -43,8 +43,8 @@ export function Hero({ onRegistered }: { onRegistered: () => void }) {
 
           <ul className="mt-8 grid max-w-2xl gap-3 text-sm text-slate-600 sm:grid-cols-3">
             {[
-              { icon: Clock, text: '60 минут по делу' },
-              { icon: MessagesSquare, text: 'Q&A в прямом эфире' },
+              { icon: Clock, text: `${EVENT.expertMin} мин выжимки от эксперта` },
+              { icon: MessagesSquare, text: `${EVENT.qaMin} мин живого Q&A` },
               { icon: PlayCircle, text: 'Запись для участников' },
             ].map(({ icon: Icon, text }) => (
               <li key={text} className="flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white/70 px-3 py-2.5 backdrop-blur">
@@ -75,7 +75,7 @@ function LivePill() {
       </span>
       <span className="inline-flex items-center gap-1.5">
         <CalendarDays className="size-3.5 text-slate-400" aria-hidden />
-        {EVENT.dateLabel}, {EVENT.timeLabel} ({EVENT.durationMin} мин)
+        {EVENT.dateLabel}, {EVENT.timeLabel} {EVENT.tzLabel} · {EVENT.durationMin} мин ({EVENT.expertMin} + {EVENT.qaMin} Q&amp;A)
       </span>
     </div>
   );
