@@ -26,16 +26,18 @@ export const LEAD_MAGNET = {
 };
 
 export const SPEAKER = {
-  name: 'Главный бухгалтер IMOSTA',
-  role: 'Head of Accounting, IMOSTA Biuro Rachunkowe',
+  name: 'Татьяна Бакаева',
+  nameLatin: 'Tatsiana Bakayeva',
+  role: 'Главный бухгалтер IMOSTA (Head of Accounting)',
   photo: '', // e.g. '/speaker.jpg' — leave empty to show the placeholder
-  experienceYears: 15,
-  clients: '200+',
-  bio: 'Ежедневно ведёт бухгалтерию Sp. z o.o., коммандитных товариществ (sp.k.) и JDG, которые готовятся к преобразованию в компанию. Специализируется на закрытии года, эстонском CIT (Estoński CIT) и безопасном планировании выплат учредителям. Говорит о налогах просто — без канцелярита и без запугивания.',
+  // Stat tiles render only when set, e.g. experienceYears: 10, clients: '150+'
+  experienceYears: null as number | null,
+  clients: null as string | null,
+  bio: 'Практикующий эксперт по бухгалтерскому учёту и налогообложению бизнеса в Польше.',
   credentials: [
-    'Сертификат Министерства финансов Польши на право оказания бухгалтерских услуг',
-    'Практика в торговом праве (KSH) и расчётах CIT/VAT',
-    'Внедрение KSeF и JPK_CIT у клиентов бюро',
+    'Ведение бухгалтерии и налоговое планирование для Sp. z o.o. и JDG',
+    'Сопровождение перехода на Estoński CIT',
+    'Адаптация процессов компании к KSeF и JPK_CIT',
   ],
 };
 

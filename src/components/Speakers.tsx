@@ -9,7 +9,7 @@ export function Speakers() {
         <SectionHeading
           eyebrow="Спикеры и организаторы"
           title="Вы спрашиваете практика, а не теоретика"
-          lead="Вебинар ведёт специалист, который каждый год закрывает книги десятков компаний — и знает, где чаще всего возникают проблемы."
+          lead="Вебинар ведёт Татьяна Бакаева — практикующий главный бухгалтер, которая ежедневно работает с польскими Sp. z o.o. и JDG и знает, где чаще всего возникают проблемы."
         />
 
         <div className="mt-14 grid gap-6 lg:grid-cols-5">
@@ -33,21 +33,29 @@ export function Speakers() {
               <div className="p-6 sm:col-span-3 sm:p-7">
                 <p className="text-xs font-bold tracking-wider text-brand-emerald uppercase">IMOSTA Biuro Rachunkowe</p>
                 <h3 className="mt-1 text-2xl font-extrabold tracking-tight text-brand-navy">{SPEAKER.name}</h3>
-                <p className="text-sm font-medium text-slate-500">{SPEAKER.role}</p>
+                <p className="text-xs font-medium text-slate-400">{SPEAKER.nameLatin}</p>
+                <p className="mt-1 text-sm font-medium text-slate-500">{SPEAKER.role}</p>
                 <p className="mt-4 text-sm leading-relaxed text-slate-600">{SPEAKER.bio}</p>
 
-                <dl className="mt-5 grid grid-cols-2 gap-3">
-                  <div className="rounded-xl border border-slate-100 bg-slate-50 p-3">
-                    <dt className="text-xs text-slate-500">Практика в торговом праве</dt>
-                    <dd className="text-2xl font-extrabold text-brand-navy">{SPEAKER.experienceYears}+ лет</dd>
-                  </div>
-                  <div className="rounded-xl border border-slate-100 bg-slate-50 p-3">
-                    <dt className="text-xs text-slate-500">Компаний на обслуживании</dt>
-                    <dd className="text-2xl font-extrabold text-brand-navy">{SPEAKER.clients}</dd>
-                  </div>
-                </dl>
+                {(SPEAKER.experienceYears || SPEAKER.clients) && (
+                  <dl className="mt-5 grid grid-cols-2 gap-3">
+                    {SPEAKER.experienceYears && (
+                      <div className="rounded-xl border border-slate-100 bg-slate-50 p-3">
+                        <dt className="text-xs text-slate-500">Практика в Польше</dt>
+                        <dd className="text-2xl font-extrabold text-brand-navy">{SPEAKER.experienceYears}+ лет</dd>
+                      </div>
+                    )}
+                    {SPEAKER.clients && (
+                      <div className="rounded-xl border border-slate-100 bg-slate-50 p-3">
+                        <dt className="text-xs text-slate-500">Компаний на обслуживании</dt>
+                        <dd className="text-2xl font-extrabold text-brand-navy">{SPEAKER.clients}</dd>
+                      </div>
+                    )}
+                  </dl>
+                )}
 
-                <ul className="mt-5 space-y-2">
+                <p className="mt-5 text-xs font-bold tracking-wider text-slate-400 uppercase">Специализация</p>
+                <ul className="mt-2 space-y-2">
                   {SPEAKER.credentials.map((c, i) => {
                     const Icon = [Award, Scale, BadgeCheck][i % 3];
                     return (
