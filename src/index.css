@@ -1,0 +1,67 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --color-brand-navy: #0f172a;
+  --color-brand-navy-2: #1e293b;
+  --color-brand-emerald: #059669;
+  --color-brand-emerald-2: #10b981;
+  --color-brand-blue: #2563eb;
+  --color-brand-amber: #d97706;
+
+  --animate-fade-in: fade-in 200ms ease-out both;
+  --animate-pop-in: pop-in 320ms cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+  --animate-slide-up: slide-up 280ms ease-out both;
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes pop-in {
+    from { opacity: 0; transform: translateY(12px) scale(0.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(100%); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  @apply bg-slate-50 font-sans text-slate-700 antialiased;
+}
+
+/* Sticky header offset for anchor targets */
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+/* Animated success checkmark */
+.check-circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  animation: check-stroke 600ms cubic-bezier(0.65, 0, 0.45, 1) 100ms forwards;
+}
+.check-mark {
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: check-stroke 350ms cubic-bezier(0.65, 0, 0.45, 1) 650ms forwards;
+}
+@keyframes check-stroke {
+  to { stroke-dashoffset: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 1ms !important;
+  }
+}
