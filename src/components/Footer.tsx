@@ -3,7 +3,7 @@ import { Logos } from './ui';
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="bg-slate-950 text-slate-400">
+    <footer className="bg-brand-navy text-white/70">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div className="max-w-md">
@@ -26,7 +26,7 @@ export function Footer() {
           </nav>
         </div>
 
-        <div className="mt-10 space-y-3 border-t border-white/10 pt-8 text-xs leading-relaxed text-slate-500">
+        <div className="mt-10 space-y-3 border-t border-white/10 pt-8 text-xs leading-relaxed text-white/50">
           <p>
             Администраторами персональных данных, указанных в форме, являются OPRIMO BPO Sp. z o.o. и IMOSTA. Мы обрабатываем
             данные для регистрации на мероприятие, отправки материалов и записи (ст. 6 п. 1 лит. a и b RODO/GDPR). Вы вправе
@@ -37,7 +37,7 @@ export function Footer() {
             Материалы вебинара и PDF носят информационный и образовательный характер и не являются налоговой или
             юридической консультацией. Налоговые решения следует согласовывать индивидуально.
           </p>
-          <p className="pt-2 text-slate-400">© {year} OPRIMO BPO Sp. z o.o. &amp; IMOSTA. Все права защищены.</p>
+          <p className="pt-2 text-white/70">© {year} OPRIMO BPO Sp. z o.o. &amp; IMOSTA. Все права защищены.</p>
         </div>
       </div>
     </footer>

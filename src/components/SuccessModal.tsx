@@ -23,13 +23,13 @@ export function SuccessModal({ open, onClose }: { open: boolean; onClose: () => 
 
   return (
     <div className="fixed inset-0 z-50 flex items-end justify-center p-4 sm:items-center" role="presentation">
-      <div className="absolute inset-0 animate-fade-in bg-slate-950/60 backdrop-blur-sm" onClick={onClose} aria-hidden />
+      <div className="absolute inset-0 animate-fade-in bg-brand-navy/70 backdrop-blur-sm" onClick={onClose} aria-hidden />
 
       <div
         role="dialog"
         aria-modal="true"
         aria-labelledby="success-title"
-        className="relative w-full max-w-md animate-pop-in rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-2xl sm:p-8"
+        className="relative w-full max-w-md animate-pop-in rounded-xl border border-slate-200 bg-white p-6 text-center shadow-2xl sm:p-8"
       >
         <button
           ref={closeRef}
@@ -42,14 +42,14 @@ export function SuccessModal({ open, onClose }: { open: boolean; onClose: () => 
         </button>
 
         <svg className="mx-auto size-20" viewBox="0 0 56 56" aria-hidden>
-          <circle cx="28" cy="28" r="26" className="fill-emerald-50" />
+          <circle cx="28" cy="28" r="26" className="fill-brand-blue/10" />
           <circle
             className="check-circle"
             cx="28"
             cy="28"
             r="26"
             fill="none"
-            stroke="#059669"
+            stroke="#0066CC"
             strokeWidth="2.5"
             transform="rotate(-90 28 28)"
           />
@@ -57,7 +57,7 @@ export function SuccessModal({ open, onClose }: { open: boolean; onClose: () => 
             className="check-mark"
             d="M17 29l7 7 15-16"
             fill="none"
-            stroke="#059669"
+            stroke="#0066CC"
             strokeWidth="3.5"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -83,14 +83,14 @@ export function SuccessModal({ open, onClose }: { open: boolean; onClose: () => 
           <a
             href={LEAD_MAGNET.href}
             download={LEAD_MAGNET.fileName}
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-emerald px-5 py-3.5 font-semibold text-white shadow-sm transition hover:bg-emerald-700 hover:shadow-md"
+            className="inline-flex items-center justify-center gap-2 rounded-md bg-brand-orange px-5 py-3.5 font-bold text-white shadow-sm transition hover:bg-brand-orange-hover hover:shadow-md"
           >
             <Download className="size-5" aria-hidden /> Скачать чек-лист PDF сейчас
           </a>
           <a
             href={calendarHref()}
             download="webinar-zamkniecie-roku-2026.ics"
-            className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
+            className="inline-flex items-center justify-center gap-2 rounded-md border border-brand-navy/20 bg-white px-5 py-3 font-semibold text-brand-navy transition hover:border-slate-300 hover:bg-slate-50"
           >
             <CalendarPlus className="size-5 text-brand-blue" aria-hidden /> Добавить в календарь ({EVENT.dateLabel}, {EVENT.timeLabel})
           </a>

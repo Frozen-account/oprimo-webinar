@@ -113,16 +113,16 @@ export function RegistrationForm({ onSuccess }: { onSuccess: () => void }) {
   return (
     <div
       id={FORM_ANCHOR}
-      className="relative scroll-mt-24 rounded-2xl border border-slate-200 bg-white p-5 shadow-xl shadow-slate-900/5 sm:p-7"
+      className="relative scroll-mt-24 rounded-xl border border-slate-200 bg-white p-5 shadow-2xl shadow-black/25 sm:p-7"
     >
-      <div className="absolute inset-x-0 top-0 h-1 rounded-t-2xl bg-gradient-to-r from-brand-emerald via-brand-emerald-2 to-brand-blue" />
+      <div className="absolute inset-x-0 top-0 h-1 rounded-t-xl bg-gradient-to-r from-brand-orange to-brand-orange-2" />
 
       <div className="mb-5 flex items-start justify-between gap-3">
         <div>
           <h2 className="text-xl font-extrabold tracking-tight text-brand-navy">Забронируйте место</h2>
           <p className="mt-1 text-sm text-slate-500">Регистрация займёт около 40 секунд.</p>
         </div>
-        <span className="shrink-0 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-bold text-brand-emerald ring-1 ring-emerald-100">
+        <span className="shrink-0 rounded-full bg-brand-orange px-2.5 py-1 text-xs font-bold text-white">
           0 zł
         </span>
       </div>
@@ -243,7 +243,7 @@ export function RegistrationForm({ onSuccess }: { onSuccess: () => void }) {
               aria-invalid={!!errors.consent}
               aria-describedby={errors.consent ? 'consent-error' : undefined}
               className={cn(
-                'mt-0.5 size-4 shrink-0 cursor-pointer rounded border-slate-300 accent-brand-emerald',
+                'mt-0.5 size-4 shrink-0 cursor-pointer rounded border-slate-300 accent-brand-blue',
                 errors.consent && 'outline-2 outline-red-400',
               )}
             />
@@ -269,7 +269,7 @@ export function RegistrationForm({ onSuccess }: { onSuccess: () => void }) {
         <button
           type="submit"
           disabled={status === 'submitting'}
-          className="group flex w-full items-center justify-center gap-2 rounded-xl bg-brand-emerald px-5 py-4 text-base font-bold text-white shadow-md shadow-emerald-900/20 transition hover:bg-emerald-700 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-emerald-2 active:scale-[0.99] disabled:cursor-wait disabled:opacity-80"
+          className="group flex w-full items-center justify-center gap-2 rounded-md bg-brand-orange px-5 py-4 text-base font-bold text-white shadow-md shadow-brand-orange/20 transition hover:bg-brand-orange-hover hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange active:scale-[0.99] disabled:cursor-wait disabled:opacity-80"
         >
           {status === 'submitting' ? (
             <>
@@ -293,11 +293,11 @@ export function RegistrationForm({ onSuccess }: { onSuccess: () => void }) {
 
 function inputCls(invalid: boolean) {
   return cn(
-    'block w-full rounded-xl border bg-slate-50/60 px-3.5 py-2.5 text-sm text-brand-navy placeholder:text-slate-400 transition',
-    'focus:bg-white focus:outline-none focus:ring-4',
+    'block w-full rounded-md border bg-white px-3.5 py-2.5 text-sm text-brand-navy placeholder:text-slate-400 transition',
+    'focus:outline-none',
     invalid
-      ? 'border-red-300 focus:border-red-400 focus:ring-red-100'
-      : 'border-slate-200 hover:border-slate-300 focus:border-brand-emerald-2 focus:ring-emerald-100',
+      ? 'border-red-400 focus:border-red-500 focus:ring-1 focus:ring-red-500'
+      : 'border-slate-300 hover:border-slate-400 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue',
   );
 }
 

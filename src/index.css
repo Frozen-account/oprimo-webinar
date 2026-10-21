@@ -3,11 +3,13 @@
 @theme {
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-  --color-brand-navy: #0f172a;
-  --color-brand-navy-2: #1e293b;
-  --color-brand-emerald: #059669;
-  --color-brand-emerald-2: #10b981;
-  --color-brand-blue: #2563eb;
+  --color-brand-navy: #0d2b52;
+  --color-brand-navy-2: #0a2242;
+  --color-brand-orange: #ff4d00;
+  --color-brand-orange-2: #ff5500;
+  --color-brand-orange-hover: #e04400;
+  --color-brand-blue: #0066cc;
+  --color-brand-gray: #f4f6f9;
   --color-brand-amber: #d97706;
 
   --animate-fade-in: fade-in 200ms ease-out both;
@@ -34,12 +36,18 @@ html {
 }
 
 body {
-  @apply bg-slate-50 font-sans text-slate-700 antialiased;
+  @apply bg-brand-gray font-sans text-slate-700 antialiased;
 }
 
 /* Sticky header offset for anchor targets */
 section[id] {
   scroll-margin-top: 5.5rem;
+}
+
+/* Subtle dot grid for dark navy blocks */
+.dot-grid {
+  background-image: radial-gradient(rgb(255 255 255 / 0.09) 1px, transparent 1px);
+  background-size: 22px 22px;
 }
 
 /* Animated success checkmark */
