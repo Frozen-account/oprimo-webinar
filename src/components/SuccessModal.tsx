@@ -89,7 +89,7 @@ export function SuccessModal({ open, onClose }: { open: boolean; onClose: () => 
           </a>
           <a
             href={calendarHref()}
-            download="webinar-zamkniecie-roku-2026.ics"
+            download="webinar-vat-23-11-2026.ics"
             className="inline-flex items-center justify-center gap-2 rounded-md border border-brand-navy/20 bg-white px-5 py-3 font-semibold text-brand-navy transition hover:border-slate-300 hover:bg-slate-50"
           >
             <CalendarPlus className="size-5 text-brand-blue" aria-hidden /> Добавить в календарь ({EVENT.dateLabel}, {EVENT.timeLabel})

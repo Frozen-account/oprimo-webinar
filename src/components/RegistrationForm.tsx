@@ -220,7 +220,7 @@ export function RegistrationForm({ onSuccess }: { onSuccess: () => void }) {
               name="question"
               rows={3}
               maxLength={QUESTION_MAX}
-              placeholder="напр. Как безопасно выплатить дивиденды, подготовка к KSeF..."
+              placeholder="Например: когда нужно регистрироваться на VAT-UE при оплате Google Ads, как ускорить возврат VAT, проверка адреса при регистрации..."
               value={values.question}
               onChange={(e) => set('question', e.target.value)}
               onBlur={() => blur('question')}

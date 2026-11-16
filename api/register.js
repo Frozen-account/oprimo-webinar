@@ -2,7 +2,7 @@
 // Przyjmuje rejestrację na webinar i wysyła ją do Telegrama (jak send-lead w imosta-landing / imosta-jdg).
 // Env: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
 
-const LEAD_TAG = '[Webinar: Zamknięcie Roku 2026]';
+const LEAD_TAG = '[Webinar: VAT w Polsce 23.11.2026]';
 const MAX_BODY_BYTES = 10 * 1024;
 
 const BUSINESS_FORMS = { spzoo: 'Sp. z o.o.', jdg: 'JDG', inna: 'Inna' };

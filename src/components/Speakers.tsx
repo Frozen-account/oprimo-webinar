@@ -1,4 +1,4 @@
-import { Award, BadgeCheck, Building2, Cog, Scale, UserRound, Workflow } from 'lucide-react';
+import { Award, BadgeCheck, Building2, Cog, Scale, Workflow } from 'lucide-react';
 import { COHOST, SPEAKER } from '../content';
 import { SectionHeading } from './ui';
 
@@ -9,7 +9,7 @@ export function Speakers() {
         <SectionHeading
           eyebrow="Спикеры и организаторы"
           title="Вы спрашиваете практика, а не теоретика"
-          lead="Вебинар ведёт Татьяна Бакаева — практикующий главный бухгалтер, которая ежедневно работает с польскими Sp. z o.o. и JDG и знает, где чаще всего возникают проблемы."
+          lead="На вопросы отвечает Татьяна Бакаева — практикующий главный бухгалтер, которая ежедневно работает с польскими Sp. z o.o. и JDG. Эфир модерирует Дарья из OPRIMO BPO."
         />
 
         <div className="mt-14 grid gap-6 lg:grid-cols-5">
@@ -17,14 +17,12 @@ export function Speakers() {
           <article className="overflow-hidden rounded-xl border border-brand-navy/15 bg-white shadow-sm lg:col-span-3">
             <div className="grid sm:grid-cols-5">
               <div className="relative sm:col-span-2">
-                {SPEAKER.photo ? (
-                  <img src={SPEAKER.photo} alt={SPEAKER.name} className="h-full min-h-64 w-full object-cover" />
-                ) : (
-                  <div className="flex h-full min-h-64 flex-col items-center justify-center gap-3 bg-gradient-to-br from-brand-gray to-slate-200 text-brand-navy/40">
-                    <UserRound className="size-20" strokeWidth={1.25} aria-hidden />
-                    <span className="text-xs font-medium">Фото спикера</span>
-                  </div>
-                )}
+                <img
+                  src={SPEAKER.photo}
+                  alt={`${SPEAKER.name} — ${SPEAKER.role}`}
+                  loading="lazy"
+                  className={`h-80 w-full object-cover sm:h-full sm:min-h-80 ${SPEAKER.photoPosition}`}
+                />
                 <span className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-white/70 px-2.5 py-1 text-xs font-bold text-brand-navy shadow-sm ring-1 ring-white/60 backdrop-blur">
                   <BadgeCheck className="size-3.5 text-brand-blue" aria-hidden /> Спикер
                 </span>
@@ -72,18 +70,25 @@ export function Speakers() {
 
           {/* Co-host + organizers */}
           <div className="flex flex-col gap-6 lg:col-span-2">
-            <article className="rounded-xl border border-brand-navy/15 bg-white p-6 shadow-sm sm:p-7">
-              <div className="flex items-center gap-4">
-                <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-brand-navy text-white">
-                  <UserRound className="size-7" strokeWidth={1.5} aria-hidden />
+            <article className="overflow-hidden rounded-xl border border-brand-navy/15 bg-white shadow-sm">
+              <div className="relative">
+                <img
+                  src={COHOST.photo}
+                  alt={`${COHOST.name} — ${COHOST.badge}`}
+                  loading="lazy"
+                  className={`aspect-[16/10] w-full object-cover ${COHOST.photoPosition}`}
+                />
+                <span className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-white/70 px-2.5 py-1 text-xs font-bold text-brand-navy shadow-sm ring-1 ring-white/60 backdrop-blur">
+                  <BadgeCheck className="size-3.5 text-brand-blue" aria-hidden /> Модератор
                 </span>
-                <div>
-                  <p className="text-xs font-bold tracking-wider text-brand-blue uppercase">Соведущий</p>
-                  <h3 className="text-lg font-extrabold tracking-tight text-brand-navy">{COHOST.name}</h3>
-                  <p className="text-sm text-slate-500">{COHOST.role}</p>
-                </div>
               </div>
-              <p className="mt-4 text-sm leading-relaxed text-slate-600">{COHOST.bio}</p>
+              <div className="p-6 sm:p-7">
+                <p className="text-xs font-bold tracking-wider text-brand-blue uppercase">OPRIMO BPO</p>
+                <h3 className="mt-1 text-lg font-extrabold tracking-tight text-brand-navy">{COHOST.name}</h3>
+                <p className="text-xs font-medium text-slate-400">{COHOST.nameLatin}</p>
+                <p className="mt-1 text-sm text-slate-500">{COHOST.role}</p>
+                <p className="mt-4 text-sm leading-relaxed text-slate-600">{COHOST.bio}</p>
+              </div>
             </article>
 
             <article className="dot-grid flex-1 rounded-xl bg-brand-navy p-6 text-white/75 shadow-sm sm:p-7">
@@ -104,7 +109,7 @@ export function Speakers() {
                 </li>
                 <li className="flex gap-3">
                   <Cog className="mt-0.5 size-5 shrink-0 text-brand-orange" aria-hidden />
-                  <span>Вместе: бухгалтерия + процессы, то есть закрытие года без переработок.</span>
+                  <span>Вместе: бухгалтерия + процессы, то есть VAT без ошибок, блокировок и задержек возврата.</span>
                 </li>
               </ul>
             </article>

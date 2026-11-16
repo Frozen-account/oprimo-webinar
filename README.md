@@ -1,6 +1,6 @@
-# OPRIMO BPO × IMOSTA — webinar „Zamknięcie Roku 2026”
+# OPRIMO BPO × IMOSTA — webinar „VAT w Polsce” (23.11.2026)
 
-Landing page rejestracji na bezpłatny webinar Q&A (15.11.2026, 18:00 CET; 20 min ekspert + 40 min Q&A). Vite + React + TypeScript + Tailwind CSS v4 + Lucide.
+Landing page rejestracji na bezpłatny webinar Q&A (23.11.2026, 18:00 CET; 30 min praktycznych case’ów + 40 min Q&A). Vite + React + TypeScript + Tailwind CSS v4 + Lucide.
 
 ```bash
 npm install
@@ -12,13 +12,13 @@ npm run build     # typecheck + build do dist/
 |---|---|
 | `src/content.ts` | Dane wydarzenia, prowadzący, FAQ, plik PDF — **tu edytujesz treści** |
 | `src/components/` | Sekcje strony (Header, Hero, RegistrationForm, Agenda, Speakers, LeadMagnet, Faq, FinalCta, Footer, SuccessModal, MobileCtaBar) |
-| `api/register.js` | Vercel Function: `POST /api/register` → Telegram, tag `[Webinar: Zamknięcie Roku 2026]` |
+| `api/register.js` | Vercel Function: `POST /api/register` → Telegram, tag `[Webinar: VAT w Polsce 23.11.2026]` |
 | `public/` | Statyczne pliki — wrzuć tu PDF (`LEAD_MAGNET.fileName`) i zdjęcie prowadzącej |
 
 ## Przed publikacją
 
-1. `public/Kalendarz-Zamkniecia-Roku-2026-i-Checklista-KSeF.pdf` — dodaj właściwy plik PDF.
-2. `src/content.ts` → `SPEAKER`: imię, zdjęcie, lata doświadczenia, liczba klientów, certyfikaty (obecnie placeholdery).
+1. `public/Checklista-Bezpieczna-Praca-z-VAT.pdf` — dodaj właściwy plik PDF.
+2. `src/content.ts` → `SPEAKER`: lata doświadczenia i liczba klientów (kafelki pokażą się po uzupełnieniu). Zdjęcia prowadzących: `public/images/`.
 3. Podstrony `/polityka-prywatnosci`, `/rodo`, `/regulamin-webinaru` — linki w stopce i zgodzie RODO.
 4. Wysyłka e-maila z linkiem do transmisji: obecnie `api/register.js` tylko powiadamia Telegram — podłącz platformę webinarową / ESP.
 

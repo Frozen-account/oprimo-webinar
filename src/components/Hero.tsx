@@ -1,5 +1,5 @@
 import { CalendarDays, Clock, Gift, MessagesSquare, PlayCircle } from 'lucide-react';
-import { EVENT } from '../content';
+import { COHOST, EVENT, SPEAKER } from '../content';
 import { useCountdown } from '../lib';
 import { RegistrationForm } from './RegistrationForm';
 
@@ -17,23 +17,27 @@ export function Hero({ onRegistered }: { onRegistered: () => void }) {
         <div className="lg:col-span-7 lg:pt-4">
           <LivePill />
 
-          <h1 className="mt-6 text-4xl leading-[1.08] font-extrabold tracking-tight text-balance text-white sm:text-5xl lg:text-[3.5rem]">
-            Просто о налогах: закрытие 2026 года и{' '}
-            <span className="text-brand-orange">безопасный вход в 2027</span>
+          <h1 className="mt-6 text-4xl leading-[1.08] font-extrabold tracking-tight text-balance text-white sm:text-5xl">
+            VAT в Польше: ошибки предпринимателей,{' '}
+            <span className="text-brand-orange">возврат налога и исключение из реестра VAT</span>
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg text-pretty text-white/80 sm:text-xl">
-            Открытая встреча с главным бухгалтером IMOSTA. Ответы на ваши вопросы в прямом эфире: от KSeF и JPK_CIT до
-            законных выплат прибыли из Sp. z o.o. и того, как избежать налоговых штрафов.
+            Практический вебинар для владельцев бизнеса в Польше. Разберём реальные ситуации из практики, типичные ошибки
+            предпринимателей, их последствия и способы предотвращения — плюс {EVENT.qaMin} минут ответов на ваши вопросы
+            в прямом эфире.
           </p>
+
+          <HostsStrip />
 
           <div className="mt-8 flex max-w-2xl items-start gap-4 rounded-xl border border-white/15 bg-white/[0.06] p-4 backdrop-blur sm:p-5">
             <span className="grid size-11 shrink-0 place-items-center rounded-full bg-brand-orange text-white">
               <Gift className="size-5" aria-hidden />
             </span>
             <p className="text-sm text-white/85 sm:text-base">
-              <strong className="font-bold text-white">🎁 Бонус для зарегистрированных:</strong> интерактивный чек-лист
-              закрытия 2026 года с графиком внедрения KSeF — доступен сразу после регистрации.
+              <strong className="font-bold text-white">🎁 Бонус для зарегистрированных:</strong> чек-лист «Безопасная
+              работа с VAT в Польше» — проверка контрагентов (Biała lista), регистрация VAT-UE и защита от исключения из
+              реестра. Доступен сразу после регистрации.
             </p>
           </div>
 
@@ -41,8 +45,8 @@ export function Hero({ onRegistered }: { onRegistered: () => void }) {
 
           <ul className="mt-8 grid max-w-2xl gap-3 text-sm text-white/85 sm:grid-cols-3">
             {[
-              { icon: Clock, text: `${EVENT.expertMin} мин выжимки от эксперта` },
-              { icon: MessagesSquare, text: `${EVENT.qaMin} мин живого Q&A` },
+              { icon: Clock, text: `${EVENT.expertMin} мин разборов из практики` },
+              { icon: MessagesSquare, text: `${EVENT.qaMin} мин ответов на вопросы` },
               { icon: PlayCircle, text: 'Запись для участников' },
             ].map(({ icon: Icon, text }) => (
               <li key={text} className="flex items-center gap-2.5 rounded-md border border-white/15 bg-white/[0.04] px-3 py-2.5">
@@ -61,6 +65,37 @@ export function Hero({ onRegistered }: { onRegistered: () => void }) {
   );
 }
 
+function HostsStrip() {
+  const hosts = [
+    { ...SPEAKER, ring: 'border-brand-orange', badgeCls: 'bg-brand-orange text-white' },
+    { ...COHOST, ring: 'border-brand-blue', badgeCls: 'bg-brand-blue text-white' },
+  ];
+  return (
+    <div className="mt-8 max-w-2xl rounded-xl border border-white/15 bg-white/[0.06] p-4 backdrop-blur sm:p-5">
+      <p className="text-xs font-bold tracking-wider text-white/60 uppercase">Ведущие эфира</p>
+      <ul className="mt-3 grid gap-4 min-[440px]:grid-cols-2">
+        {hosts.map((h) => (
+          <li key={h.name} className="flex items-center gap-3">
+            <img
+              src={h.avatar}
+              alt={h.name}
+              width={64}
+              height={64}
+              className={`size-14 shrink-0 rounded-full border-2 object-cover object-top sm:size-16 ${h.ring}`}
+            />
+            <div className="min-w-0">
+              <p className="font-bold leading-tight text-white">{h.name}</p>
+              <span className={`mt-1 inline-block rounded-full px-2 py-0.5 text-[11px] font-semibold ${h.badgeCls}`}>
+                {h.badge}
+              </span>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 function LivePill() {
   return (
     <div className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full border border-white/15 bg-white/10 py-1.5 pr-4 pl-1.5 text-xs font-semibold text-white backdrop-blur sm:text-sm">
@@ -69,11 +104,11 @@ function LivePill() {
           <span className="absolute inline-flex size-full animate-ping rounded-full bg-white opacity-75" />
           <span className="relative inline-flex size-2 rounded-full bg-white" />
         </span>
-        Прямая трансляция
+        Прямой эфир
       </span>
       <span className="inline-flex items-center gap-1.5">
         <CalendarDays className="size-3.5 text-white/60" aria-hidden />
-        {EVENT.dateLabel}, {EVENT.timeLabel} {EVENT.tzLabel} · {EVENT.durationMin} мин ({EVENT.expertMin} + {EVENT.qaMin} Q&amp;A)
+        {EVENT.dateLabel}, {EVENT.timeLabel} {EVENT.tzShort}
       </span>
     </div>
   );

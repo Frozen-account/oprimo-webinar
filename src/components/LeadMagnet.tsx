@@ -1,30 +1,30 @@
-import { CalendarRange, CheckSquare, FileDown, ListChecks, ShieldAlert } from 'lucide-react';
+import { CheckSquare, FileDown, Globe, SearchCheck, ShieldAlert } from 'lucide-react';
 import { LEAD_MAGNET } from '../content';
 import { CtaButton } from './ui';
 
 const FEATURES = [
   {
-    icon: CalendarRange,
-    title: 'Календарь сроков 2026/2027',
-    text: 'Все даты: закрытие года, CIT-8, финансовая отчётность, KSeF и JPK_CIT — месяц за месяцем.',
+    icon: SearchCheck,
+    title: 'Проверка контрагентов (Biała lista)',
+    text: 'Как проверить статус VAT и банковский счёт контрагента перед оплатой и чем грозит перевод на счёт не из списка.',
   },
   {
-    icon: ListChecks,
-    title: 'Пошаговый чек-лист закрытия года',
-    text: 'Пункты, которые нужно пройти с вашим бухгалтером — от инвентаризации до решений учредителей.',
+    icon: Globe,
+    title: 'Регистрация VAT-UE',
+    text: 'Когда она обязательна — в том числе при оплате иностранных услуг вроде Google Ads и Meta.',
   },
   {
     icon: ShieldAlert,
-    title: 'Карта рисков при выплатах из компании',
-    text: 'Сравнение дивидендов, art. 176 KSH, B2B и Estoński CIT с «красными флагами» для Skarbówka.',
+    title: 'Защита от исключения из реестра VAT',
+    text: 'Что держать под контролем, чтобы налоговая не исключила компанию из реестра, и что делать, если это уже произошло.',
   },
 ];
 
 const PREVIEW_ROWS = [
-  { done: true, text: 'Инвентаризация (spis z natury)' },
-  { done: true, text: 'Проверка расходов KUP 2026' },
-  { done: false, text: 'Доступы KSeF для команды' },
-  { done: false, text: 'Структура JPK_CIT — проверка данных' },
+  { done: true, text: 'Счёт компании внесён в Biała lista' },
+  { done: true, text: 'Контрагент проверен перед оплатой' },
+  { done: false, text: 'VAT-UE для Google Ads / Meta' },
+  { done: false, text: 'Адрес и документы для налоговой' },
 ];
 
 export function LeadMagnet() {
@@ -46,7 +46,8 @@ export function LeadMagnet() {
                 <span className="rounded-md bg-red-50 px-2 py-0.5 text-[10px] font-bold text-red-600 ring-1 ring-red-100">PDF</span>
                 <span className="text-[10px] font-semibold text-slate-400">OPRIMO × IMOSTA</span>
               </div>
-              <h3 className="mt-4 text-lg leading-snug font-extrabold text-brand-navy">{LEAD_MAGNET.title}</h3>
+              <p className="mt-4 text-[10px] font-bold tracking-wider text-brand-blue uppercase">Чек-лист</p>
+              <h3 className="mt-1 text-lg leading-snug font-extrabold text-brand-navy">{LEAD_MAGNET.shortTitle}</h3>
               <div className="mt-1 h-1 w-12 rounded-full bg-brand-orange" />
 
               <ul className="mt-5 space-y-2.5">
@@ -73,7 +74,7 @@ export function LeadMagnet() {
                 ))}
               </div>
               <p className="mt-2 flex items-center gap-1.5 text-[10px] font-semibold text-brand-orange">
-                <span className="size-2 rounded-sm bg-brand-orange" /> 31.12 — последний день для расходов KUP
+                <span className="size-2 rounded-sm bg-brand-orange" /> Проверка по Biała lista — перед каждой оплатой
               </p>
             </div>
           </div>
@@ -82,7 +83,7 @@ export function LeadMagnet() {
             <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-bold text-white ring-1 ring-white/15 backdrop-blur">
               <FileDown className="size-3.5" aria-hidden /> Доступен сразу после регистрации
             </span>
-            <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-balance text-white sm:text-4xl">
+            <h2 className="mt-5 text-2xl font-extrabold tracking-tight text-balance text-white sm:text-3xl">
               {LEAD_MAGNET.title}
             </h2>
             <p className="mt-4 text-lg text-white/75">

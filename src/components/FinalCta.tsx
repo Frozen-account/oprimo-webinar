@@ -15,7 +15,7 @@ export function FinalCta() {
             Количество мест на сессии Q&amp;A ограничено вместимостью вебинарной комнаты
           </span>
           <h2 className="mx-auto mt-6 max-w-2xl text-3xl font-extrabold tracking-tight text-balance text-white sm:text-4xl">
-            Закройте 2026 год спокойно. Войдите в 2027 подготовленными.
+            Работайте с VAT спокойно: без ошибок, задержек возврата и исключения из реестра.
           </h2>
           <p className="mx-auto mt-4 flex max-w-xl flex-wrap items-center justify-center gap-x-2 text-white/80">
             <CalendarDays className="size-4 text-brand-orange" aria-hidden />
@@ -25,7 +25,7 @@ export function FinalCta() {
           <CtaButton size="lg" className="mt-8">
             Записаться бесплатно
           </CtaButton>
-          <p className="mt-4 text-xs text-white/60">Запись и чек-лист PDF для всех зарегистрированных.</p>
+          <p className="mt-4 text-xs text-white/60">Запись и чек-лист PDF по VAT для всех зарегистрированных.</p>
         </div>
       </div>
     </section>
