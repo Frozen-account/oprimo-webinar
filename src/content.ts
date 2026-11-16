@@ -34,9 +34,8 @@ export const SPEAKER = {
   nameLatin: 'Tatsiana Bakayeva',
   role: 'Прокурент, Главный бухгалтер IMOSTA',
   badge: 'Главный бухгалтер IMOSTA',
-  // Square crop: face + IMOSTA logo in the upper half. 35% x keeps the logo in frame on tall cards.
-  photo: '/images/tatsiana-bakayeva.jpg',
-  photoPosition: 'object-[35%_20%]',
+  photo: '/images/tatsiana-card.jpg', // 4:3, eye line ~42% — matches daria-card.jpg
+  photoPosition: 'object-[50%_20%]',
   avatar: '/images/tatsiana-bakayeva-avatar.jpg',
   // Stat tiles render only when set, e.g. experienceYears: 10, clients: '150+'
   experienceYears: null as number | null,
@@ -54,8 +53,8 @@ export const COHOST = {
   nameLatin: 'Daria',
   role: 'Представитель OPRIMO BPO — модератор эфира, операционное сопровождение бизнеса в Польше',
   badge: 'Модератор, OPRIMO BPO',
-  photo: '/images/daria-oprimo.jpg',
-  photoPosition: 'object-[50%_30%]',
+  photo: '/images/daria-card.jpg', // 4:3, eye line ~42% — matches tatsiana-card.jpg
+  photoPosition: 'object-[50%_20%]',
   avatar: '/images/daria-oprimo-avatar.jpg',
   bio: 'Покажет, как выстроить документооборот и работу со счетами так, чтобы VAT был под контролем: проверка контрагентов и счетов по Biała lista, порядок в документах для возврата — от автоматизации до аутсорсинга бэк-офиса.',
 };
