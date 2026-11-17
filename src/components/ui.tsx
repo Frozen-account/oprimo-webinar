@@ -12,25 +12,21 @@ export function Logos({ inverted = false }: { inverted?: boolean }) {
       <span className={cn('hidden text-sm font-medium min-[400px]:inline', inverted ? 'text-white/40' : 'text-slate-300')} aria-hidden>
         ×
       </span>
-      <span
-        className={cn(
-          'inline-flex items-center gap-1.5 rounded-md border px-1.5 py-1 sm:gap-2 sm:px-2',
-          inverted ? 'border-white/15 bg-white/5' : 'border-brand-navy/15 bg-white',
-        )}
-      >
-        <span className="grid size-6 place-items-center rounded-full bg-brand-blue text-[11px] font-extrabold text-white">
-          I
-        </span>
-        <span className="flex flex-col leading-none">
-          <span className={cn('text-sm font-extrabold tracking-tight', inverted ? 'text-white' : 'text-brand-navy')}>
-            IMOSTA
-          </span>
-          <span className={cn('hidden text-[10px] font-medium sm:block', inverted ? 'text-white/60' : 'text-slate-500')}>
-            Biuro Rachunkowe
-          </span>
-        </span>
-      </span>
+      <ImostaLogo inverted={inverted} className="h-7 sm:h-9" />
     </div>
+  );
+}
+
+/** Official IMOSTA logo (transparent PNG, 3:1). `inverted` uses the variant with white "OSTA" for dark backgrounds. */
+export function ImostaLogo({ inverted = false, className }: { inverted?: boolean; className?: string }) {
+  return (
+    <img
+      src={inverted ? '/images/imosta-logo-white.png' : '/images/imosta-logo.png'}
+      alt="IMOSTA"
+      width={528}
+      height={176}
+      className={cn('block w-auto shrink-0', className)}
+    />
   );
 }
 

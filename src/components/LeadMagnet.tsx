@@ -1,6 +1,6 @@
 import { CheckSquare, FileDown, Globe, SearchCheck, ShieldAlert } from 'lucide-react';
 import { LEAD_MAGNET } from '../content';
-import { CtaButton } from './ui';
+import { CtaButton, ImostaLogo } from './ui';
 
 const FEATURES = [
   {
@@ -44,7 +44,9 @@ export function LeadMagnet() {
             <div className="relative rounded-xl bg-white p-6 shadow-2xl">
               <div className="flex items-center justify-between">
                 <span className="rounded-md bg-red-50 px-2 py-0.5 text-[10px] font-bold text-red-600 ring-1 ring-red-100">PDF</span>
-                <span className="text-[10px] font-semibold text-slate-400">OPRIMO × IMOSTA</span>
+                <span className="flex items-center gap-1 text-[10px] font-semibold text-slate-400">
+                  OPRIMO × <ImostaLogo className="h-3.5" />
+                </span>
               </div>
               <p className="mt-4 text-[10px] font-bold tracking-wider text-brand-blue uppercase">Чек-лист</p>
               <h3 className="mt-1 text-lg leading-snug font-extrabold text-brand-navy">{LEAD_MAGNET.shortTitle}</h3>
