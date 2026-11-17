@@ -49,14 +49,17 @@ export const SPEAKER = {
 };
 
 export const COHOST = {
-  name: 'Дарья',
-  nameLatin: 'Daria',
-  role: 'Представитель OPRIMO BPO — модератор эфира, операционное сопровождение бизнеса в Польше',
+  name: 'Дарья Коссе',
+  nameLatin: 'Daria Kosse',
+  role: 'Руководитель проекта',
   badge: 'Модератор, OPRIMO BPO',
   photo: '/images/daria-card.jpg', // 4:3, eye line ~42% — matches tatsiana-card.jpg
   photoPosition: 'object-[50%_20%]',
   avatar: '/images/daria-oprimo-avatar.jpg',
-  bio: 'Покажет, как выстроить документооборот и работу со счетами так, чтобы VAT был под контролем: проверка контрагентов и счетов по Biała lista, порядок в документах для возврата — от автоматизации до аутсорсинга бэк-офиса.',
+  bio: 'OPRIMO BPO - комплексное решение для запуска вашего бизнеса в Польше. Вы управляете бизнесом. Мы решаем задачи на месте.',
+  website: 'https://oprimo.pl',
+  // TODO(content): paste Daria's LinkedIn profile URL — the button renders only when this is set.
+  linkedin: '',
 };
 
 export const FAQ = [

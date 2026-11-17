@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { Award, BadgeCheck, Building2, Cog, Scale, Workflow } from 'lucide-react';
+import { Award, BadgeCheck, Building2, Cog, ExternalLink, Globe, Scale, Workflow } from 'lucide-react';
 import { COHOST, SPEAKER } from '../content';
 import { SectionHeading } from './ui';
 
@@ -10,7 +10,7 @@ export function Speakers() {
         <SectionHeading
           eyebrow="Спикеры и организаторы"
           title="Вы спрашиваете практика, а не теоретика"
-          lead="На вопросы отвечает Татьяна Бакаева — практикующий главный бухгалтер, которая ежедневно работает с польскими Sp. z o.o. и JDG. Эфир модерирует Дарья из OPRIMO BPO."
+          lead="На вопросы отвечает Татьяна Бакаева — практикующий главный бухгалтер, которая ежедневно работает с польскими Sp. z o.o. и JDG. Эфир модерирует Дарья Коссе, руководитель проекта OPRIMO BPO."
         />
 
         <div className="mx-auto mt-14 grid max-w-5xl grid-cols-1 items-stretch gap-6 md:grid-cols-2">
@@ -66,7 +66,18 @@ export function Speakers() {
             nameLatin={COHOST.nameLatin}
             role={COHOST.role}
             bio={COHOST.bio}
-          />
+          >
+            <div className="mt-5 flex flex-wrap gap-2">
+              <LinkPill href={COHOST.website} icon={<Globe className="size-4" aria-hidden />}>
+                oprimo.pl
+              </LinkPill>
+              {COHOST.linkedin && (
+                <LinkPill href={COHOST.linkedin} icon={<LinkedInIcon />}>
+                  LinkedIn
+                </LinkPill>
+              )}
+            </div>
+          </SpeakerCard>
         </div>
 
         {/* Organizers banner */}
@@ -95,6 +106,30 @@ export function Speakers() {
         </article>
       </div>
     </section>
+  );
+}
+
+function LinkPill({ href, icon, children }: { href: string; icon: ReactNode; children: ReactNode }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-1.5 rounded-full border border-brand-navy/15 bg-white px-3.5 py-1.5 text-sm font-semibold text-brand-navy shadow-sm transition hover:border-brand-blue/40 hover:text-brand-blue hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
+    >
+      <span className="text-brand-blue">{icon}</span>
+      {children}
+      <ExternalLink className="size-3.5 text-slate-400" aria-hidden />
+      <span className="sr-only">(откроется в новой вкладке)</span>
+    </a>
+  );
+}
+
+function LinkedInIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="size-4" fill="currentColor" aria-hidden>
+      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z" />
+    </svg>
   );
 }
 
